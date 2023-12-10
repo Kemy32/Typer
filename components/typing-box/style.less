@@ -1,0 +1,121 @@
+.text-box,
+.shadow {
+    background-color: white;
+    color: gray;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 8px;
+    padding: 2rem 5rem;
+    display: flex;
+    flex-wrap: wrap;
+    line-height: 2.5rem;
+    border-radius: 25px;
+    border-top-right-radius: 0;
+    letter-spacing: 3.5px;
+    font-size: 22px;
+}
+
+.shadow {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: calc(100% - (5rem * 2));
+    height: calc(100% - (2rem * 2));
+    opacity: 0;
+}
+
+.text-box,
+.shadow {
+    .char-indicator {
+        position: relative;
+
+        &::after {
+            content: "";
+            display: inline-block;
+            background: url(C:/Users/Karim/Desktop/Typer/interface/indicator.png);
+            background-position-x: 7px;
+            transform: scaleX(0.35);
+            height: 27px;
+            width: 6px;
+            top: -2px;
+            left: -13px;
+            position: absolute;
+            padding: 0px 8px;
+            background-repeat: no-repeat;
+            background-size: 7px;
+            border-left: 0;
+            border-right: 0;
+
+            animation: blink 1.3s steps(10, start) infinite;
+        }
+
+    }
+
+
+    @keyframes blink {
+        to {
+            visibility: hidden;
+        }
+    }
+
+    @-webkit-keyframes blink {
+        to {
+            visibility: hidden;
+        }
+    }
+
+    .char {
+
+        &.correct {
+            color: rgb(61, 240, 61);
+        }
+
+        &.wrong {
+            color: rgb(255, 30, 30);
+        }
+    }
+
+    .white-space {
+        font-size: 0;
+        width: 16px;
+        display: inline-block;
+
+
+        &.wrong {
+            position: relative;
+
+            &::before {
+                content: "";
+                position: absolute;
+                background-color: red;
+                width: 80%;
+                height: 2px;
+                bottom: 20px;
+                left: 0;
+            }
+        }
+    }
+
+    .shadow-char {
+        position: absolute;
+        opacity: 0;
+    }
+
+    &.ar {
+        direction: rtl;
+        letter-spacing: 0px;
+        font-size: 30px;
+
+        .char-indicator {
+
+            &::after {
+                left: unset;
+                right: -14px;
+            }
+        }
+
+        .white-space {
+            top: -4px;
+        }
+
+    }
+
+}

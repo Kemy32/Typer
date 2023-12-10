@@ -1,0 +1,192 @@
+body {
+    margin: 0;
+    display: grid;
+    grid-template-columns: min-content auto;
+    height: 100vh;
+    font-family: pixel;
+}
+
+.website-heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.website-icon {
+    width: 55px;
+    margin: 0 15px;
+}
+
+.website-title {
+    font-family: Pixel;
+    font-size: 45px;
+    text-align: left;
+    color: var(--yellow-main-color);
+}
+
+#main {
+    grid-column: 2;
+    // background: #f3f3f3;
+    background-image: url("interface/pixel/pixel1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    margin: 3% 10% 0;
+}
+
+
+:root {
+    
+    --yellow-main-color:#ffff02;
+    --dark-yellow-color:#b5b500;
+
+    --black-main-color:#000000;
+    --white-main-color: #ffffff;
+    
+    --grey-main-color:#5a5a5a; 
+    --dark-grey-color:#1c1c1c;
+    --main-color: #414343;
+
+}
+
+
+@font-face {
+    font-family: FontAwesome;
+    src: url("fonts/icons/fonts/fontawesome-webfont.ttf");
+}
+
+@font-face {
+    font-family: Pixel;
+    src: url("fonts/dogicapixel.ttf");
+}
+
+.typingbox-bar {
+
+    display: grid;
+    grid-template-columns: auto;
+
+    margin-top: 20px;
+    margin-bottom: 5px;
+
+}
+
+.typingbox-icons {
+    display: flex;
+    justify-content: center;
+
+    grid-column: 1;
+
+    margin-top: 5px;
+    margin-bottom: 20px;
+
+    .reset-btn {   
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 8px;
+        background: white;
+        cursor: pointer;
+        padding: 7px;
+        border-radius: 10px;
+        font-size: 20px;
+        height: fit-content;
+        // color: var(--main-color);
+        color: gray;
+
+        
+        i {
+            transition: 0.8s;
+        }
+    }
+    .reset-btn:hover {
+        i{
+        transform: rotate(360deg);
+        }
+    }
+
+    
+}
+
+.web-btn {
+    align-items: center;
+    appearance: none;
+    background-image: radial-gradient(100% 100% at 100% 0, var(--main-color) 0, var(--main-color) 100%);
+    border: 0;
+    border-radius: 6px;
+    box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: "JetBrains Mono",monospace;
+    height: 48px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow .15s,transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow,transform;
+    font-size: 18px;
+}
+  
+.web-btn:focus {
+    box-shadow: var(--yellow-main-color) 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, var(--yellow-main-color) 0 -3px 0 inset;
+}
+  
+.web-btn:hover {
+    box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, var(--black-main-color) 0 -3px 0 inset;
+    transform: translateY(-2px);
+    background-image: radial-gradient(100% 100% at 100% 0, var(--dark-yellow-color) 0, var(--yellow-main-color) 100%);
+}
+
+.web-btn:active {
+    box-shadow: var(--yellow-main-color) 0 3px 7px inset;
+    transform: translateY(2px);
+}
+
+
+input[type=text] {
+    padding: 8px 10px;
+    border-radius: 10px;
+    background: var(--yellow-main-color);
+    border:none;
+    border-bottom: 2px var(--dark-yellow-color) solid;
+    font-size: 15px;
+    outline: none;
+
+    &::placeholder {
+        color:var(--dark-yellow-color);
+    }
+}
+
+.list{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    font-size: 18px;
+
+    .item{
+        color:#000000;
+        padding: 5px;
+        cursor: pointer;
+
+        &:hover{
+            color: #ffffff;
+            background-color: #000000;
+
+        }    
+    }
+
+}

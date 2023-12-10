@@ -1,0 +1,34 @@
+.btn-selector-group {
+  display: flex;
+  flex-direction: row;
+  height: 38.5px;
+}
+.btn-selector-group .btn-selector {
+  border: 1px solid black;
+  background-color: var(--grey-main-color);
+  color: var(--yellow-main-color);
+  padding: 10px 12px;
+  border-radius: 20px;
+  font-size: 15px;
+  height: fit-content;
+  margin: auto 0;
+  transition: padding ease-in-out 0.4s;
+  cursor: pointer;
+}
+.btn-selector-group .btn-selector.selected {
+  background-color: var(--yellow-main-color);
+  color: var(--grey-main-color);
+  padding: 12px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 8px;
+}
+.btn-selector-group .btn-selector:first-child {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.btn-selector-group .btn-selector:last-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.btn-selector-group .btn-selector .label {
+  text-align: center;
+}

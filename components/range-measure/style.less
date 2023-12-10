@@ -1,0 +1,92 @@
+.range-measure {
+    display: grid;
+    align-items: center;
+    position: relative;
+
+    grid-template-rows: min-content min-content;
+    grid-template-columns: min-content auto min-content;
+
+    --thumb-height: 1.375em;
+    --thumb-width: 0.5em;
+    --clip-edges: 0.0125em;
+    --track-height: 0.125rem;
+    --track-color: var(--grey-main-color);
+    --brightness-hover: 180%;
+    --brightness-down: 80%;
+
+    input[type="range"] {
+        grid-column: 2;
+        font-size: 20px;
+        position: relative;
+        overflow: hidden;
+            
+        color: var(--yellow-main-color);
+    
+        -webkit-appearance: none;
+        transition: all ease 100ms;
+        height: var(--thumb-height);
+    }    
+    
+    input[type="range"]::-webkit-slider-runnable-track,
+    input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        transition: all ease 100ms;
+        height: var(--thumb-height);
+        position: relative;
+    }
+    
+    input[type="range"]::-webkit-slider-thumb {
+        --thumb-radius: calc((var(--thumb-height) * 0.5) - 1px);
+        --clip-top: calc((var(--thumb-height) - var(--track-height)) * 0.5 - 0.5px);
+        --clip-bottom: calc(var(--thumb-height) - var(--clip-top));
+        --clip-further: calc(100% + 1px);
+        --box-fill: calc(-100vmax + 1px - var(--thumb-width, var(--thumb-height))) 0 0
+            100vmax currentColor;
+    
+        width: var(--thumb-width, var(--thumb-height));
+        background: linear-gradient(currentColor 0 0) scroll no-repeat left center /
+            50% calc(var(--track-height) + 1px);
+        background-color: currentColor;
+        box-shadow: var(--box-fill);
+        border-radius: 20px;
+    
+        filter: brightness(100%);
+        clip-path: polygon(
+            100% -1px,
+            var(--clip-edges) -1px,
+            0 var(--clip-top),
+            -100vmax var(--clip-top),
+            -100vmax var(--clip-bottom),
+            0 var(--clip-bottom),
+            var(--clip-edges) 100%,
+            var(--clip-further) var(--clip-further)
+        );
+    }
+    
+    input[type="range"]::-webkit-slider-runnable-track {
+        background: linear-gradient(var(--track-color) 0 0) scroll no-repeat center /
+            100% calc(var(--track-height));
+    }
+
+    .bubble {
+        font-size: 14px;
+        background-color: var(--yellow-main-color);
+        color: var(--grey-main-color);
+        border-radius: 10px;
+        padding: 5px;
+        grid-column: 2;
+        grid-row: 1;
+        width: fit-content;
+        margin: auto;
+    }
+
+    .min-value {
+        grid-row: 2;
+        grid-column: 1;
+    }
+    .max-value {
+        grid-column: 3;
+        grid-row: 2;
+    }
+      
+}

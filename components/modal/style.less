@@ -1,0 +1,20 @@
+.pop-up {
+
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    &.left-position {
+        left: -50%;
+        transform: translate(0%, -50%);
+        transition: left ease-in-out 0.8s;
+    }
+
+    &:not(.left-position){
+        opacity: 0;
+        transition: opacity ease-in-out 0.5s;
+    }
+
+}

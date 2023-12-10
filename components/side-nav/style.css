@@ -1,0 +1,80 @@
+.side-nav {
+  height: 100%;
+  width: 85px;
+  margin: auto 0;
+  background-color: var(--yellow-main-color);
+  position: sticky;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  grid-column: 1;
+  grid-row: 1;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.icon-text-contanier {
+  padding: 18px 15px;
+  text-align: center;
+  width: 100%;
+}
+.side-nav .icon-text-contanier i {
+  font-size: 30px;
+  text-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.icon-text-contanier:not(.selected):hover {
+  color: white;
+  background: var(--icon-color);
+}
+.icon-text-contanier:not(.selected) {
+  color: var(--icon-color);
+}
+.icon-text-contanier.selected {
+  color: white;
+  background: var(--select-color);
+}
+.side-nav .icon-text-contanier .icon-text {
+  display: none;
+  font-size: 15px;
+  font-weight: bold;
+  margin: 10px 0;
+  padding: 0;
+  margin: 0;
+  margin-top: 4px;
+}
+.icon-text-contanier.display-bottom {
+  margin-top: auto;
+}
+.history-modal table {
+  margin-top: 20px;
+  text-align: center;
+}
+.history-modal table .table-head {
+  font-size: 12px;
+}
+.history-modal table .table-head .name {
+  width: 40%;
+}
+.history-modal table .table-head .wpm {
+  width: 22.5%;
+}
+.history-modal table .table-head .acc {
+  width: 22.5%;
+}
+.history-modal table .table-head .test {
+  width: 15%;
+}
+.history-modal table .table-data {
+  background-color: var(--yellow-main-color);
+  color: var(--dark-grey-color);
+  font-size: 15px;
+}
+.history-modal table .table-data td {
+  padding: 6px 0;
+}
+/* .side-nav .icon-text-contanier .icon-text:hover {
+    opacity: 1;
+    font-size: 16px;
+    transition-property: font-size;
+    transition-duration: 1s;
+} */
